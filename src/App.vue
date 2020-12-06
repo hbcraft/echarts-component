@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" style="width: 800px; height: 600px">
+    <EchartsPie :datas="chartData" :names="chartNames" :title="chartTitle" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import EchartsBar from './components/echarts/Bar'
+import EchartsPie from './components/echarts/Pie'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      chartTitle: '233',
+      chartData: [{
+        name: '233',
+        data: [5, 20, 36, 10, 10, 20]
+      }, {
+        name: '666',
+        data: [10, 20, 36, 10, 10, 20]
+      }, {
+        name: '555',
+        data: [15, 20, 36, 10, 10, 20]
+      }, {
+        name: '888',
+        data: [20, 20, 36, 10, 10, 20]
+      }],
+      chartNames: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    }
+  },
   components: {
-    HelloWorld
+    // EchartsBar,
+    EchartsPie
+  },
+  mounted () {
+  },
+  methods: {
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
